@@ -1,0 +1,103 @@
+## User Management Screen Specification
+
+# Requirements
+
+**Functional Requirements:**
+1. Display a list of users in a table format.
+2. Allow adding new users.
+3. Allow editing existing users.
+4. Allow enabling or disabling users.
+5. Provide a checkbox to hide disabled users.
+6. Validate form inputs before saving user details.
+
+**Non-Functional Requirements:**
+1. Ensure the user interface is responsive and accessible.
+2. Provide feedback for user actions.
+3. Handle a large number of users efficiently.
+
+# Initial Page Layout
+
+
+- **Top Bar** with:
+  - ** + New User Button** on the left side.
+  - **Hide Disabled Users Checkbox** to the right of the + New User button.
+  - **Save User Button** on the right side.
+- **Table of Users** below the top bar, aligned to the left side.
+- **User Form** will appear on the right side of the screen when the + New User button is clicked.
+
+## UI Components
+
+#Top Bar
+
+- **Location:** Top of the screen, spanning the full width.
+ **Components:**
+  - **+ New User Button:** 
+     **Label:** + New User
+     **Type:** Button
+     **Location:** Left side of the top bar.
+     **Behavior:** Clears and displays the user form for adding a new user.
+  _ **Hide Disabled Users Checkbox:** 
+     **Label:** Hide Disabled Users
+     **Type:** Checkbox
+     **Location:** To the right of the + New User button.
+     **Default State:** Unchecked
+     **Behavior:** When checked, the user table hides users with the Enabled status set to false.
+  - **Save User Button:** 
+     **Label:** Save User
+     **Type:** Button
+     **Location:** Right side of the top bar.
+     **Behavior:** Saves the details entered in the user form into the user table, either as a new entry or updating an existing one.
+
+# Table of Users
+
+ **Location:** Below the top bar, aligned to the left side of the screen.
+ **Size:** Approximately 60% of the width of the screen, spanning the full height.
+ **Columns:**
+   **ID:** Unique identifier for each user.
+   **User Name:** Username of each user.
+   **Email:** Email address of each user.
+   **Enabled:** Indicates whether a user account is enabled or disabled.
+ **Interactions:**
+  * Clicking a column header sorts the table by that column in ascending or descending order.
+  * Each column has a filter input or dropdown:
+     **ID, User Name, Email:** Text input for searching.
+     **Enabled status:** Dropdown with options (All, True, False).
+
+# User Form
+
+ **Location:** Below the top bar, aligned to the right side of the screen.
+ **Size:** Approximately 40% of the width of the screen.
+ **Fields:**
+   **Username:** Text input for the user's username.
+   **Display Name:** Text input for the user's display name.
+   **Phone:** Text input for the user's phone number.
+   **Email:** Text input for the user's email address.
+   **User Roles:** Dropdown for selecting user roles (Guest, Admin, SuperAdmin).
+   **Enabled:** Checkbox to enable or disable the user account.
+ **Behavior:** 
+   -When the + New User button is clicked, the form fields are cleared and the form is displayed for new user entry.
+   -Entering details and clicking the Save User button will add a new user or update an existing user.
+   -Clearing the form resets it for new user entry.
+
+# Form Behavior
+
+**Adding a New User:**
+ 1. Click the "+ New User" button.
+ 2. The form fields are cleared and displayed.
+ 3. Enter the user details.
+ 4. Click the "Save User" button.
+ 5. The new user is added to the table with an assigned ID.
+
+# User Feedback
+
+ **Form Validation:**
+   * Displays an error message if required fields are missing or invalid.
+   * Highlights fields that need correction.
+
+**Save Confirmation:**
+  *Displays a confirmation message upon successful save of user details.
+
+## Notes for Developers
+
+- Style UI components consistently with the application's design.
+- Ensure the interface is responsive to different device screen sizes and accessible for all users.
